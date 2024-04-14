@@ -25,7 +25,7 @@ export const Table = () => {
   }
 
   return (
-    <div className="m-5">
+    <div className="m-3">
 
       <div>
         <div className="d-flex flex-row justify-content-between">
@@ -47,6 +47,8 @@ export const Table = () => {
               <th>Nombre</th>
               <th>Apellidos</th>
               <th>Fecha Nacimiento</th>
+              <th>Caracteristicas</th>
+              <th>Posicion</th>
             </tr>
           </thead>
           <tbody>
@@ -57,6 +59,14 @@ export const Table = () => {
                 <td>{futbolista.name}</td>
                 <td>{futbolista.lastName}</td>
                 <td>{futbolista.birthDate.toString()}</td>
+                <td>{futbolista.characteristics}</td>
+                <td>
+                  <ul>
+                    {futbolista.positions.map((position, index) => (
+                      <li key={index}>{position.name}</li>
+                    ))}
+                  </ul>
+                </td>
               </tr>
              
             ))}

@@ -31,12 +31,17 @@ export const FutbolistaById = () => {
         {futbolista && (
           <div>
             <h3>Datos del Futbolista</h3>
-            <p>Id: {futbolista.id}</p>
-            <p>Nombres: {futbolista.name}</p>
-            <p>Apellidos: {futbolista.lastName}</p>
-            <p>Fecha de nacimiento: {futbolista.birthDate.toString()}</p>
-            <p>Características: {futbolista.characteristics}</p>
-            <p>Posición: </p>
+            <p> <strong>Id: </strong> {futbolista.id}</p>
+            <p> <strong>Nombres: </strong>{futbolista.name}</p>
+            <p> <strong>Apellidos: </strong>{futbolista.lastName}</p>
+            <p><strong>Fecha de nacimiento: </strong>{futbolista.birthDate.toString()}</p>
+            <p><strong>Características: </strong>{futbolista.characteristics}</p>
+            <p><strong>Posición: </strong></p>
+            <ul>
+              {futbolista.positions.map((position, index) => (
+                <li key={index}>{position.name}</li>
+              ))}
+            </ul>
           </div>
         )}
 
